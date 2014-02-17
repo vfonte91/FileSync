@@ -1,5 +1,7 @@
 package com.vfonte.filesync;
 
+import com.vfonte.filesync.activity.AccountsFragment;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.Fragment;
@@ -114,7 +116,14 @@ public class MainActivity extends Activity {
 	/** Swaps fragments in the main content view */
 	private void selectItem(int position) {
 	    // Create a new fragment
-	    Fragment fragment = new DummyFragment();
+	    Fragment fragment;
+	    switch (position) {
+	    	case 1:
+	    		fragment = new AccountsFragment();
+	    		break;
+	    	default:
+	    		fragment = new DummyFragment();
+	    }
 	    Bundle args = new Bundle();
         args.putInt(DummyFragment.TITLE, position);
         fragment.setArguments(args);
