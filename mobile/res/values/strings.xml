@@ -6,10 +6,13 @@
         <item>Accounts</item>
         <item>Settings</item>
     </string-array>
+
     <string name="app_name">FileSync</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="title_activity_create_account">CreateAccountActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
