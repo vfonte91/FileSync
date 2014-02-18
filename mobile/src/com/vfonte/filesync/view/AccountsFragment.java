@@ -1,4 +1,4 @@
-package com.vfonte.filesync.activity;
+package com.vfonte.filesync.view;
 
 import com.vfonte.filesync.FileSync;
 import com.vfonte.filesync.R;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,6 +31,19 @@ public class AccountsFragment extends Fragment  {
 		accounts = new String[] {"A", "B", "C"};
 
 		adapter = new SimpleArrayAdapter(FileSync.getAppContext(), accounts);
+
+		// set the adapter for the ListFragment
+		listView.setAdapter(adapter);
+		// set selection mode
+	    listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+	    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+	        @Override
+	        public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+
+	        }
+
+	      });
 		return rootView;
 	}
 
