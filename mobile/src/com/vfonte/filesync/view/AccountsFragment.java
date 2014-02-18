@@ -5,6 +5,7 @@ import com.vfonte.filesync.R;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,8 @@ public class AccountsFragment extends Fragment  {
 
 	        @Override
 	        public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
-
+				// setup new user
+				startActivity(new Intent(FileSync.getAppContext(), CreateAccountActivity.class));
 	        }
 
 	      });
