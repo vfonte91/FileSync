@@ -1,6 +1,6 @@
 package com.vfonte.filesync;
 
-import com.vfonte.filesync.activity.AccountsFragment;
+import com.vfonte.filesync.view.AccountsFragment;
 
 import android.os.Bundle;
 import android.app.Activity;
