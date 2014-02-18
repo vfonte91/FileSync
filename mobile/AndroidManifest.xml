@@ -27,6 +27,8 @@
             android:name="com.vfonte.filesync.view.CreateAccountActivity"
             android:label="@string/title_activity_create_account" >
         </activity>
+        <meta-data android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
