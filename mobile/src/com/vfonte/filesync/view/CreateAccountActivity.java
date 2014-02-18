@@ -21,4 +21,7 @@ public class CreateAccountActivity extends Activity {
 		return true;
 	}
 
+	public void authenticate() {
+	}
+
 }
