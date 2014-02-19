@@ -1,6 +1,7 @@
 package com.vfonte.filesync;
 
 import com.vfonte.filesync.view.AccountsFragment;
+import com.vfonte.filesync.view.FileListFragment;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -121,6 +122,8 @@ public class MainActivity extends Activity {
 	    	case 1:
 	    		fragment = new AccountsFragment();
 	    		break;
+	    	case 2:
+	    		fragment = new FileListFragment();
 	    	default:
 	    		fragment = new DummyFragment();
 	    }
