@@ -1,26 +1,74 @@
 package com.vfonte.filesync.view;
 
+import com.vfonte.filesync.FileSync;
 import com.vfonte.filesync.R;
-import com.vfonte.filesync.R.layout;
-import com.vfonte.filesync.R.menu;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+import android.app.Fragment;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
-public class FileListActivity extends Activity {
+public class FileListFragment extends Fragment {
+	private ListView listView;
+	private SimpleArrayAdapter adapter;
+	private String[] files;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_file_list);
+	public FileListFragment() {
+
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.file_list, menu);
-		return true;
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		View rootView = inflater.inflate(R.layout.fragment_list, container, false);
+		listView = (ListView) rootView.findViewById(android.R.id.list);
+
+		files = new String[] {"A", "B", "C"};
+
+		adapter = new SimpleArrayAdapter(FileSync.getAppContext(), files);
+
+		// set the adapter for the ListFragment
+		listView.setAdapter(adapter);
+		// set selection mode
+	    listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+	    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+	        @Override
+	        public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+	        }
+
+	      });
+		return rootView;
+	}
+
+	public class SimpleArrayAdapter extends ArrayAdapter<String> {
+		private final Context context;
+		private final String[] values;
+		private final static int layout = R.layout.file_list_item;
+
+		public SimpleArrayAdapter(Context context, String[] values) {
+			super(context, layout, values);
+			this.context = context;
+			this.values = values;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+			// inflate the item view
+		    View rowView = inflater.inflate(layout, parent, false);
+
+		    // Set the session name text view to name
+		    TextView textView = (TextView) rowView.findViewById(R.id.file_list_text_view);
+		    textView.setText(this.values[position]);
+			return rowView;
+		}
 	}
 
 }

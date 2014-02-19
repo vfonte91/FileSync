@@ -124,6 +124,7 @@ public class MainActivity extends Activity {
 	    		break;
 	    	case 2:
 	    		fragment = new FileListFragment();
+	    		break;
 	    	default:
 	    		fragment = new DummyFragment();
 	    }
