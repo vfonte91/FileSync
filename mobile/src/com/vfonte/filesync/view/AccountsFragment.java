@@ -41,7 +41,7 @@ public class AccountsFragment extends Fragment  {
 
 	        @Override
 	        public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
-				// setup new user
+				// setup new account
 				startActivity(new Intent(FileSync.getAppContext(), CreateAccountActivity.class));
 	        }
 
