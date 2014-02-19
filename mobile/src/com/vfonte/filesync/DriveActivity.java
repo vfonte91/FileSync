@@ -63,7 +63,7 @@ public class DriveActivity extends Activity implements ConnectionCallbacks, OnCo
     @Override
     protected void onStart() {
         super.onStart();
-        if (!mResolvingError) {  // more about this later
+        if (!mResolvingError) {
             mGoogleApiClient.connect();
         }
     }
