@@ -14,5 +14,6 @@
     <string name="drawer_close">Close navigation drawer</string>
     <string name="title_activity_create_account">CreateAccountActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_file_list">FileListActivity</string>
 
 </resources>
